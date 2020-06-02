@@ -1,21 +1,21 @@
 name: Cont integeration and deployment
 
-on: [push]
+on: push
 
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      name: Publish the Webpage on Surge Server
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Publish the Webpage on Surge Server
 
-      steps:
-        - uses: actions/checkout@v2
-        - name: Setup Node for surge
-          uses: actions/setup-node@v2-beta
-          with:
-            node-version: 12
-        - name: Setup Surge using node
-          run: npm install -g surge
-        - name: Deploy the WebPage to Surge
-          run: surge ./ bootcamp_CICD.surge.sh --token ${{ secrets.SURGE_SEC }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Node for surge
+        uses: actions/setup-node@v2-beta
+        with:
+          node-version: 12
+      - name: Setup Surge using node
+        run: npm install -g surge
+      - name: Deploy the WebPage to Surge
+        run: surge ./ bootcamp_CICD.surge.sh --token ${{ secrets.SURGE_SEC }}
 
           
