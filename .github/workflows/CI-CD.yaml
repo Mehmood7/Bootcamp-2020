@@ -1,6 +1,6 @@
 name: Cont integeration and deployment
 
-on: push
+on: [push]
 
   jobs:
     build:
