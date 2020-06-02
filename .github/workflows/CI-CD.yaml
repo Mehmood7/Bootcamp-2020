@@ -4,8 +4,8 @@ on: push
 
   jobs:
     build:
-      name: Publish the Webpage on Surge Server
       runs-on: ubuntu-latest
+      name: Publish the Webpage on Surge Server
 
       steps:
         - uses: actions/checkout@v2
